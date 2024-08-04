@@ -1,4 +1,4 @@
-# Find 'From' addresses in folder of `.emlx` files
+# Find 'From' addresses in a folder of `.emlx` files
 
 This Python script will traverse a folder containing `.emlx` Apple Mail files, and output information about which email addresses and domains have sent the most emails in it.
 

@@ -74,7 +74,7 @@ def print_results(results):
     rows = []
     for address, data in sorted_results.items():
         col3 = data["names"] if "names" in data else []
-        rows.append([str(data["count"]), address, ", ".join(col3)])
+        rows.append([str(data["count"]), address, ", ".join(sorted(col3))])
 
     # Calculate how wide each column needs to be:
     widths = [max(map(len, col)) for col in zip(*rows)]

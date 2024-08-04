@@ -86,7 +86,7 @@ or:
 
 ## Why?
 
-Every so often I like to check my Spam mailbox and find any 'From' addresses that are used frequenly, and block them entirely. I wrote this script to make it easier to find which addresses to block.
+Every so often I like to check my Spam mailbox and find any 'From' addresses that are used frequently, and block them entirely. I wrote this script to make it easier to find which addresses to block.
 
 But it might have other uses – it's up to you.
 

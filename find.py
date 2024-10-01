@@ -1,4 +1,8 @@
-#!/usr/bin/env python3
+# /// script
+# dependencies = [
+#   "emlx",
+# ]
+# ///
 import argparse
 import email
 import logging

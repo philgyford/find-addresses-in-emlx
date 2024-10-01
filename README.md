@@ -6,21 +6,31 @@ I've only tried this on macOS, using mailbox folders created by Mail.app, and ru
 
 ## Usage
 
-1.  Check out or download this repository.
+Check out or download this repository.
 
-2.  Install the [Emlx Parser](https://github.com/terhechte/emlx) module:
+Then, if you use [uv](https://github.com/astral-sh/uv) then run the script, passing in the path to a folder containing `.emlx` files, e.g.:
 
-	```shell
-	pip install -r requirements.txt
-	```
+```shell
+uv run find.py /path/to/mailbox.mbox
+```
 
-3.  Run the script, passing it the path to a folder containing `.emlx` files. e.g.:
+If you're not using uv, you'll first need to install the [Emlx Parser](https://github.com/terhechte/emlx), e.g.:
 
-	```shell
-	./find.py /Users/bob/Library/Mail/V10/900DAD94-6138-4ED8-8C6B-CD8061D5108E/Spam.mbox
-	```
+```shell
+pip install emlx
+```
 
-    If you're using macOS, Mail.app keeps its mail folders in your `~/Library` directory, at a path similar to that shown above. By default this isn't visible in the Finder but there are [several ways to show it](https://kb.mit.edu/confluence/display/istcontrib/How+to+make+your+Library+folder+visible+in+the+Finder+in+OS+X+10.9+%28Mavericks%29+or+later).
+Then run the script with your mailbox path:
+
+```shell
+./find.py /path/to/mailbox.mbox
+```
+
+If you're using macOS, Mail.app keeps its mail folders in your `~/Library` directory, at a path something like:
+
+    /Users/bob/Library/Mail/V10/900DAD94-6138-4ED8-8C6B-CD8061D5108E/Spam.mbox
+
+By default this directory isn't visible in the Finder but there are [several ways to show it](https://kb.mit.edu/confluence/display/istcontrib/How+to+make+your+Library+folder+visible+in+the+Finder+in+OS+X+10.9+%28Mavericks%29+or+later).
 
 ## Example output
 

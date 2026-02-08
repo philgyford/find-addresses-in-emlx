@@ -7,6 +7,7 @@ import argparse
 import email
 import logging
 import os
+import sys
 
 import emlx
 
@@ -23,7 +24,7 @@ def extract_addresses(emlx_folder_path):
     addresses = {}
     domains = {}
 
-    for root, dirs, files in os.walk(emlx_folder_path):
+    for root, dirs, files in os.walk(emlx_folder_path, onerror=walk_error):
         for file in files:
             if file.endswith(".emlx"):
                 emlx_file_path = os.path.join(root, file)
@@ -52,6 +53,12 @@ def extract_addresses(emlx_folder_path):
                             domains[domain] = {"count": 1}
 
     return addresses, domains
+
+
+def walk_error(err):
+    "Called when there's an error with os.walk() in extract_addresses()"
+    print(f"Error while walking the directory: {err}")
+    sys.exit(1)
 
 
 def print_results(results):
@@ -88,7 +95,6 @@ def print_results(results):
 
 
 if __name__ == "__main__":
-
     parser = argparse.ArgumentParser(
         description='Extract "From" addresses from emails in a folder of .emlx files.'
     )
